@@ -1,0 +1,31 @@
+{
+  "name": "hardwaremonitorelectron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexis",
+  "license": "ISC",
+  "dependencies": {
+    "systeminformation": "^5.21.15"
+  },
+  "devDependencies": {
+    "electron": "^27.0.3",
+    "electron-builder": "^24.6.4"
+  },
+  "build": {
+    "appId": "com.example.myapp",
+    "mac": {
+      "category": "your.app.category.type"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "dir"
+    }
+  }
+}
