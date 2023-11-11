@@ -5,6 +5,7 @@ let mainWindow;
 
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
+    transparent: true,
     width: 600,
     height: 600,
     webPreferences: {
@@ -24,6 +25,8 @@ app.on('ready', () => {
     const ramUsage = await si.mem();
     mainWindow.webContents.send('ram-usage', ramUsage);
   };
+
+  
 
   sendCPUUsage();
   sendRAMUsage();
