@@ -1,7 +1,6 @@
 {
   "name": "hardwaremonitorelectron",
   "version": "1.0.0",
-  "description": "",
   "main": "main.js",
   "scripts": {
     "start": "electron main.js",
@@ -10,10 +9,10 @@
   "author": "Alexis",
   "license": "ISC",
   "dependencies": {
-    "systeminformation": "^5.21.15"
+    "systeminformation": "^5.21.17"
   },
   "devDependencies": {
-    "electron": "^27.0.3",
+    "electron": "^27.0.4",
     "electron-builder": "^24.6.4"
   },
   "build": {
@@ -27,5 +26,7 @@
     "linux": {
       "target": "dir"
     }
-  }
+  },
+  "keywords": [],
+  "description": ""
 }

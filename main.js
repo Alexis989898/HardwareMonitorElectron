@@ -5,15 +5,15 @@ let mainWindow;
 
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
-    transparent: true,
-    width: 600,
-    height: 600,
+    width: 960,
+    height: 540,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
     },
   });
 
+  mainWindow.setMenu(null);
   mainWindow.loadFile('index.html');
 
   const sendCPUUsage = async () => {
@@ -26,7 +26,6 @@ app.on('ready', () => {
     mainWindow.webContents.send('ram-usage', ramUsage);
   };
 
-  
 
   sendCPUUsage();
   sendRAMUsage();
