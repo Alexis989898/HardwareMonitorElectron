@@ -1,0 +1,6 @@
+Pra rodar o programa:
+npm start
+
+Pra dar build no programa:
+Linux: npm run buildlinux
+Windows: npm run buildwin
