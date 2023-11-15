@@ -1,5 +1,4 @@
-/* Principal ------------------------------------- ultima alteracao feita por PANIAGUA*/
-
+/* Principal */
 @charset "UTF-8";
 
 :root {
@@ -20,8 +19,8 @@ body {
 }
 
 
-/* cabeca --------------------------------------- ultima alteracao feita por PANIAGUA   */
-header{
+/* Header */
+header {
     background-color: #0D0D0D;
     padding-top: 1%;
     padding-left: 2%;
@@ -29,36 +28,39 @@ header{
     padding-bottom: 1%;
 }
 
-h1{
+h1 {
     padding: 0px;
     margin: 0px;
-    padding-bottom: 1%; 
+    padding-bottom: 1%;
     color: var(--branco);
 }
 
-nav > a{
+nav>a {
     padding: 0px;
     margin: 0px;
     text-decoration: none;
     padding-right: 2%;
 }
 
-a#aqui{
+a#aqui {
     color: var(--cinza);
 }
-a.outros{
+
+a.outros {
     color: var(--branco);
 }
-.outros:hover{
+
+.outros:hover {
     font-weight: bold;
     color: var(--cinza);
 }
-#aqui:hover{
+
+#aqui:hover {
     font-weight: bold;
 }
 
-/* main ----------------------------------------- ultima alteracao feita por PANIAGUA  */
-main{
+/* main */
+main {
     background-color: var(--branco);
     position: relative;
     width: 80%;
@@ -70,51 +72,54 @@ main{
     padding-top: 3%;
     padding-bottom: 3%;
 }
-h2{
+
+h2 {
     padding: 0;
     margin: 0;
     padding-bottom: 1.5%;
 }
-p{
+
+p {
     padding: 0;
     margin: 0;
 }
-.centralizado{
-    text-align: justify; 
+
+.centralizado {
+    text-align: justify;
     display: flex;
-    align-items: center; 
-    justify-content: center; 
+    align-items: center;
+    justify-content: center;
     margin-left: 5%;
     margin-right: 5%;
     text-indent: 30px;
 }
 
-.imagem{
+.imagem {
     width: 250px;
     height: 250px;
 }
 
-/* rodapé --------------------------------------- ultima alteracao feita por PANIAGUA  */
-footer{
+/* Footer  */
+footer {
     background-color: var(--preto);
-    color: var(--branco); 
+    color: var(--branco);
     text-align: right;
     padding-right: 2%;
 }
 
-footer p{
-    line-height: 5vh; 
+footer p {
+    line-height: 5vh;
     margin: 0;
 }
 
-/* Mostradores  ------------------------------------  */
+/* Mostradores */
 .mostradores-container {
     display: flex;
-    justify-content: space-around; 
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.mostrador{
+.mostrador {
     background-color: var(--cinza);
     width: 30%;
     height: 50vh;
@@ -125,12 +130,57 @@ footer p{
     border: solid 1px var(--cinza);
 }
 
-.mostrador > img {
+.mostrador>img {
     width: 65%;
     height: 25vh;
     padding: 10px;
 }
 
-.mostrador >p{
+.mostrador>p {
     text-align: left;
+}
+
+/* CSS do overlay de carregamento */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.loader {
+    border: 4px solid rgba(0, 0, 0, 0.3);
+    border-top: 4px solid var(--cinza);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Animação de carregamento */
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.loading-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
 }

@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, globalShortcut } = require('electron');
 const si = require('systeminformation');
 
 let mainWindow;
@@ -8,16 +8,16 @@ app.on('ready', () => {
     width: 980,
     height: 650,
     // seta o tamanho minimo e maximo da aplicacao -> ultima alteracao feita por PANIAGUA
-    minHeight:650,
-    minWidth:980,
-    maxWidth:1920,
-    maxHeight:1080,
+    minHeight: 650,
+    minWidth: 980,
+    maxWidth: 1920,
+    maxHeight: 1080,
     //----------------------------------------------------------------------------
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
     },
-    
+
   });
 
   // Define o ícone da aplicação -> ultima alteracao feita por PANIAGUA
@@ -25,22 +25,61 @@ app.on('ready', () => {
   //------------------------------------------------------------
 
   mainWindow.setMenu(null);
-  mainWindow.loadFile('index.html');
+  mainWindow.loadFile('hardware.html');
 
-  const sendCPUUsage = async () => {
-    const cpuUsage = await si.currentLoad();
-    mainWindow.webContents.send('cpu-usage', cpuUsage);
+  const CPUInfo = async () => {
+    try {
+      const cpuData = await si.cpu();
+      const cpuBrand = cpuData.brand;
+      const cpuManufacturer = cpuData.manufacturer;
+      if (mainWindow) {
+        mainWindow.webContents.send('cpu-info', cpuBrand, cpuManufacturer);
+      }
+    } catch (error) {
+      console.error('Error fetching CPU info:', error);
+    }
   };
 
-  const sendRAMUsage = async () => {
-    const ramUsage = await si.mem();
-    mainWindow.webContents.send('ram-usage', ramUsage);
+  const RAMInfo = async () => {
+    try {
+      const ramData = await si.mem();
+      const ramIndividualData = await si.memLayout();
+      const ramType = ramIndividualData[0].type;
+      const ramTotal = ramData.total / (1024 * 1024 * 1024);
+      if (mainWindow) {
+        mainWindow.webContents.send('ram-info', ramType, ramTotal);
+      }
+    } catch (error) {
+      console.error('Error fetching RAM info:', error);
+    }
   };
 
+  const GPUInfo = async () => {
+    try {
+      const gpuData = await si.graphics();
+      const gpuName = gpuData.model;
+      const gpuManufacturer = gpuData.vendor;
+      if (mainWindow) {
+        mainWindow.webContents.send('gpu-info', gpuName, gpuManufacturer);
+      }
+    } catch (error) {
+      console.error('Error fetching GPU info:', error);
+    }
+  };
 
-  sendCPUUsage();
-  sendRAMUsage();
+  ipcMain.on('infoRequest', (event) => {
 
-  setInterval(sendCPUUsage, 1000);
-  setInterval(sendRAMUsage, 1000);
+    CPUInfo();
+    RAMInfo();
+    GPUInfo();
+    mainWindow.webContents.send('data-loaded');
+  });
+
+
+
+  //setInterval(sendRAMUsage, 1000);
+
+  globalShortcut.register('CommandOrControl+Shift+I', () => {
+    mainWindow.webContents.openDevTools();
+  });
 });

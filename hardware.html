@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--ultima alteracao feita por PANIAGUA -->
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,6 @@
 </head>
 
 <body>
-  <!-- <div id="cpu-usage"></div>
-  <div id="ram-usage"></div> @Alexis, acho que isso já estava no cod, ent eu to colocando comentario para n excluir, eu acho que é para mostrar as váriaveis-->
   <header>
     <h1>Project AWP</h1>
     <nav>
@@ -19,34 +17,44 @@
     </nav>
   </header>
   <main>
-      <div class="mostradores-container ">
-        <div class="mostrador">
-          <h2>CPU</h2>
-          <img src="./img/cpu.png" alt="imagem CPU">
-          <p><strong>Name:</strong> XXXXXXXXXX</p> <!-- alexis coloca as váriaveis aqui no lugar do x-->
-          <p><strong>Manufacturer:</strong> XXXXXXXXXX</p> <!-- alexis coloca as váriaveis aqui no lugar do x-->
-          <p><strong>Utilization:</strong> XXXXXXXXXX</p> <!-- alexis coloca as váriaveis aqui no lugar do x-->
-        </div>
 
-        <div class="mostrador">
-          <h2>RAM</h2>
-          <img src="./img/ram.png" alt="imagem CPU">
-          <p><strong>Type:</strong> XXXXXXXXXX</p>  <!-- alexis coloca as váriaveis aqui no lugar do x-->
-          <p><strong>Total:</strong> XXXXXXXXXX</p> <!-- alexis coloca as váriaveis aqui no lugar do x-->
-          <p><strong>Utilization:</strong> XXXXXXXXXX</p> <!-- alexis coloca as váriaveis aqui no lugar do x-->
-        </div>
+    <!-- Overlay de carregamento -->
+    <div id="overlay">
+      <div class="loader"></div>
+      <div class="loading-text">Loading data...</div>
+    </div>
 
-        <div class="mostrador">
-          <h2>GPU</h2>
-          <img src="./img/gpu.png" alt="imagem CPU">
-          <p><strong>Name:</strong> XXXXXXXXXX</p> <!-- alexis coloca as váriaveis aqui no lugar do x-->
-          <p><strong>Manufacturer:</strong> XXXXXXXXXX</p> <!-- alexis coloca as váriaveis aqui no lugar do x-->
-          <p><strong>Utilization:</strong> XXXXXXXXXX</p> <!-- alexis coloca as váriaveis aqui no lugar do x-->
-        </div>
+    <div class="mostradores-container ">
+      <div class="mostrador">
+        <h2>CPU</h2>
+        <img src="./img/cpu.png" alt="imagem CPU">
+        <p id="cpu-name"><strong>Name: </strong></p>
+        <p id="cpu-manufacturer"><strong>Manufacturer: </strong></p>
+        <p id="cpu-usage"><strong>Utilization: </strong> </p>
       </div>
+
+      <div class="mostrador">
+        <h2>RAM</h2>
+        <img src="./img/ram.png" alt="imagem RAM">
+        <p id="ram-type"><strong>Type: </strong> </p> 
+        <p id="ram-total"><strong>Total: </strong> </p>
+        <p id="ram-usage"><strong>Utilization: </strong> </p>
+      </div>
+
+      <div class="mostrador">
+        <h2>GPU</h2>
+        <img src="./img/gpu.png" alt="imagem GPU">
+        <p id="gpu-name"><strong>Name: </strong> </p> 
+        <p id="gpu-manufacturer"><strong>Manufacturer: </strong> </p> 
+        <p id="gpu-usage"><strong>Utilization: </strong> </p> 
+      </div>
+    </div>
   </main>
   <footer>
     <p>Made by Alexis, Bruno and Willian</p>
   </footer>
 </body>
+
+<script src="renderer.js" preload="preload.js"></script>
+
 </html>
