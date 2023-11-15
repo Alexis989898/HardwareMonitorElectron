@@ -1,0 +1,136 @@
+/* Principal ------------------------------------- ultima alteracao feita por PANIAGUA*/
+
+@charset "UTF-8";
+
+:root {
+    --preto: #0D0D0D;
+    --branco: #f2f2f2;
+    --cinza: #a6a6a6;
+    --fonte-padrao: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-family: var(--fonte-padrao);
+    background-color: var(--cinza);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* cabeca --------------------------------------- ultima alteracao feita por PANIAGUA   */
+header{
+    background-color: #0D0D0D;
+    padding-top: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+}
+
+h1{
+    padding: 0px;
+    margin: 0px;
+    padding-bottom: 1%; 
+    color: var(--branco);
+}
+
+nav > a{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    padding-right: 2%;
+}
+
+a#aqui{
+    color: var(--cinza);
+}
+a.outros{
+    color: var(--branco);
+}
+.outros:hover{
+    font-weight: bold;
+    color: var(--cinza);
+}
+#aqui:hover{
+    font-weight: bold;
+}
+
+/* main ----------------------------------------- ultima alteracao feita por PANIAGUA  */
+main{
+    background-color: var(--branco);
+    position: relative;
+    width: 80%;
+    width: 80%;
+    left: 10%;
+    text-align: center;
+    flex: 1;
+    padding: 0;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+h2{
+    padding: 0;
+    margin: 0;
+    padding-bottom: 1.5%;
+}
+p{
+    padding: 0;
+    margin: 0;
+}
+.centralizado{
+    text-align: justify; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    margin-left: 5%;
+    margin-right: 5%;
+    text-indent: 30px;
+}
+
+.imagem{
+    width: 250px;
+    height: 250px;
+}
+
+/* rodapé --------------------------------------- ultima alteracao feita por PANIAGUA  */
+footer{
+    background-color: var(--preto);
+    color: var(--branco); 
+    text-align: right;
+    padding-right: 2%;
+}
+
+footer p{
+    line-height: 5vh; 
+    margin: 0;
+}
+
+/* Mostradores  ------------------------------------  */
+.mostradores-container {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap;
+}
+
+.mostrador{
+    background-color: var(--cinza);
+    width: 30%;
+    height: 50vh;
+    margin: 1.6%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    box-shadow: 0px 0px 10px black;
+    border: solid 1px var(--cinza);
+}
+
+.mostrador > img {
+    width: 65%;
+    height: 25vh;
+    padding: 10px;
+}
+
+.mostrador >p{
+    text-align: left;
+}
