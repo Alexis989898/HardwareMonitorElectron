@@ -21,7 +21,9 @@ app.on('ready', () => {
   });
 
   // Define o ícone da aplicação -> ultima alteracao feita por PANIAGUA
-  mainWindow.setIcon("./img/icon.png");
+  const path = require('path');
+  const iconPath = path.join(__dirname, 'img', 'icon.png');
+  mainWindow.setIcon(iconPath);
   //------------------------------------------------------------
 
   mainWindow.setMenu(null);
@@ -45,7 +47,7 @@ app.on('ready', () => {
       const ramData = await si.mem();
       const ramIndividualData = await si.memLayout();
       const ramType = ramIndividualData[0].type;
-      const ramTotal = ramData.total / (1024 * 1024 * 1024);
+      const ramTotal = (ramData.total / (1024 * 1024 * 1024)).toFixed(2) + " GBs";
       if (mainWindow) {
         mainWindow.webContents.send('ram-info', ramType, ramTotal);
       }
