@@ -16,40 +16,44 @@
       <a href="#" id="aqui">Hardware</a>
     </nav>
   </header>
-  <main>
-
-    <!-- Overlay de carregamento -->
-    <div id="overlay">
-      <div class="loader"></div>
-      <div class="loading-text">Loading data...</div>
-    </div>
-
+  <!-- Overlay de carregamento -->
+  <div id="overlay">
+    <div class="loader"></div>
+    <div class="loading-text">Loading data...</div>
+  </div>
+  <div class="hardware">
     <div class="mostradores-container ">
       <div class="mostrador">
         <h2>CPU</h2>
         <img src="./img/cpu.png" alt="imagem CPU">
-        <p id="cpu-name"><strong>Name: </strong></p>
-        <p id="cpu-manufacturer"><strong>Manufacturer: </strong></p>
-        <p id="cpu-usage"><strong>Utilization: </strong> </p>
+        <div class="textos">
+          <p id="cpu-name"><strong>Name: </strong></p>
+          <p id="cpu-manufacturer"><strong>Manufacturer: </strong></p>
+          <p id="cpu-usage"><strong>Utilization: </strong> </p>
+        </div>
       </div>
 
       <div class="mostrador">
         <h2>RAM</h2>
         <img src="./img/ram.png" alt="imagem RAM">
-        <p id="ram-type"><strong>Type: </strong> </p> 
-        <p id="ram-total"><strong>Total: </strong> </p>
-        <p id="ram-usage"><strong>Utilization: </strong> </p>
+        <div class="textos">
+          <p id="ram-type"><strong>Type: </strong> </p>
+          <p id="ram-total"><strong>Total: </strong> </p>
+          <p id="ram-usage"><strong>Utilization: </strong> </p>
+        </div>
       </div>
 
       <div class="mostrador">
         <h2>GPU</h2>
         <img src="./img/gpu.png" alt="imagem GPU">
-        <p id="gpu-name"><strong>Name: </strong> </p> 
-        <p id="gpu-manufacturer"><strong>Manufacturer: </strong> </p> 
-        <p id="gpu-usage"><strong>Utilization: </strong> </p> 
+        <div class="textos">
+          <p id="gpu-name"><strong>Name: </strong> </p>
+          <p id="gpu-manufacturer"><strong>Manufacturer: </strong> </p>
+          <p id="gpu-usage"><strong>Utilization: </strong> </p>
+        </div>
       </div>
     </div>
-  </main>
+  </div>
   <footer>
     <p>Made by Alexis, Bruno and Willian</p>
   </footer>

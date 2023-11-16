@@ -20,7 +20,8 @@ body {
 
 
 /* Header */
-header {
+/* cabeca --------------------------------------- ultima alteracao feita por PANIAGUA   */
+header{
     background-color: #0D0D0D;
     padding-top: 1%;
     padding-left: 2%;
@@ -28,42 +29,66 @@ header {
     padding-bottom: 1%;
 }
 
-h1 {
+h1{
     padding: 0px;
     margin: 0px;
-    padding-bottom: 1%;
+    padding-bottom: 1%; 
     color: var(--branco);
 }
 
-nav>a {
+nav > a{
     padding: 0px;
     margin: 0px;
     text-decoration: none;
     padding-right: 2%;
 }
 
-a#aqui {
+a#aqui{
     color: var(--cinza);
 }
-
-a.outros {
+a.outros{
     color: var(--branco);
 }
-
-.outros:hover {
+.outros:hover{
     font-weight: bold;
     color: var(--cinza);
 }
-
-#aqui:hover {
+#aqui:hover{
     font-weight: bold;
 }
 
 /* main */
-main {
+
+.hardware{
     background-color: var(--branco);
     position: relative;
-    width: 80%;
+    width: 100%;
+    text-align: center;
+    flex: 1;
+    padding: 0;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hardware{
+    background-color: var(--branco);
+    position: relative;
+    width: 100%;
+    text-align: center;
+    flex: 1;
+    padding: 0;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    background-color: var(--branco);
+    position: relative;
     width: 80%;
     left: 10%;
     text-align: center;
@@ -72,72 +97,76 @@ main {
     padding-top: 3%;
     padding-bottom: 3%;
 }
-
-h2 {
+h2{
     padding: 0;
     margin: 0;
     padding-bottom: 1.5%;
 }
-
-p {
+p{
     padding: 0;
     margin: 0;
 }
 
-.centralizado {
-    text-align: justify;
+.centralizado{
+    text-align: justify; 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; 
+    justify-content: center; 
     margin-left: 5%;
     margin-right: 5%;
     text-indent: 30px;
 }
 
-.imagem {
+.imagem{
     width: 250px;
     height: 250px;
 }
 
 /* Footer  */
-footer {
+footer{
     background-color: var(--preto);
-    color: var(--branco);
+    color: var(--branco); 
     text-align: right;
     padding-right: 2%;
 }
 
-footer p {
-    line-height: 5vh;
+footer p{
+    line-height: 5vh; 
     margin: 0;
 }
 
 /* Mostradores */
 .mostradores-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; 
     flex-wrap: wrap;
 }
 
-.mostrador {
+.mostrador{
     background-color: var(--cinza);
     width: 30%;
-    height: 50vh;
+    height: auto;
     margin: 1.6%;
     padding-top: 2.5%;
     padding-bottom: 2.5%;
     box-shadow: 0px 0px 10px black;
-    border: solid 1px var(--cinza);
+    word-wrap: break-word;
 }
 
-.mostrador>img {
+.mostrador > img {
     width: 65%;
-    height: 25vh;
+    height: auto;
     padding: 10px;
 }
 
-.mostrador>p {
+.mostrador >p{
     text-align: left;
+}
+
+.textos{
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 /* CSS do overlay de carregamento */
