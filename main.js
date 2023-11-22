@@ -119,9 +119,12 @@ app.on('ready', () => {
   });
 
   setInterval(UsageInfo, 1200);
+
+
+  
   //setInterval(GPUUsageInfo, 1200);
 
-  globalShortcut.register('CommandOrControl+Shift+I', () => {
+  /*globalShortcut.register('CommandOrControl+Shift+I', () => {
     mainWindow.webContents.openDevTools();
-  });
+  });*/ // Comando para abrir o console
 });

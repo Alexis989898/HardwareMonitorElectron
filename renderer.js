@@ -17,10 +17,6 @@ const div_gpu_usage = document.getElementById('gpu-usage');
 const div_gpu_usage_text = div_gpu_usage.innerHTML;
 //------------------------------------------------------------
 
-
-overlay.style.display = 'block';
-
-//Pede o envio de dados para o main.js
 ipcRenderer.send('infoRequest');
 
 //Recebe o conteúdo de main.js e insere no html
@@ -79,8 +75,4 @@ ipcRenderer.on('GPUUsageInfo', (event, { gpuUsage }) => { //Not Working
     } else {
         console.error('Invalid GPU usage data:', { gpuUsage });
     }
-}); 
-
-ipcRenderer.on('data-loaded', (event, datasent) => {
-    overlay.style.display = 'none';
 });
